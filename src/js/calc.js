@@ -104,6 +104,14 @@ function time(){
   tiempo = descarga / 60;
 }
 function calc(){
+    peso = document.getElementById('PesoArchivo')
+    unidad = document.getElementById('SelectUnidad')
+    velocidad = document.getElementById('SelectMb')
+    alerta = document.getElementById('alerta')
+    pesoArchivo;
+    descarga;
+    tiempo;
+    unidadTemporal;
     unidadPeso();
     velocidadDescarga()
     download()
@@ -111,10 +119,10 @@ function calc(){
     getHours();
     if(inthour => 24){
       getDays()
-      alerta.innerHTML = "Su descarga tomará: " + " " + day + " " + "dia" + "," + " " + dayhours + " " + "horas" + "," + " " + intminutes + " " + "minutos" + " " + intseconds + " " + "segundos";
+      alerta.innerHTML = "<span data-i18n>downloadTime</span> " + " " + day + " " + "<span data-i18n>day</span>" + "," + " " + dayhours + " " + "<span data-i18n>hours</span>" + "," + " " + intminutes + " " + "<span data-i18n>minutes</span>" + " " + intseconds + " " + "<span data-i18n>seconds</span>";
     } 
     if(inthour < 24){
-      alerta.innerHTML = "Su descarga tomará: " + " " + inthour + " " + "horas" + "," + " " + intminutes + " " + "minutos" + " " + intseconds + " " + "segundos";
+      alerta.innerHTML = "<span data-i18n>downloadTime</span> " + " " + inthour + " " + "<span data-i18n>hours</span>" + "," + " " + intminutes + " " + "<span data-i18n>minutes</span>" + " " + intseconds + " " + "<span data-i18n>seconds</span>";
     }
 }
 function getHours(){
